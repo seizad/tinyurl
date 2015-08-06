@@ -11,8 +11,7 @@ Features:
 - User accounts
 - Urls managed for each user
 - Each Url has a short name which will work in the form of http://domain-name/<incoming> and will redirect to the specified url
+- Table stat allows tracking various events that take place on a url, such as click, update, delete, etc. It makes it easy to create various detailed stats related urls.
 
 TODO:
-- I left some notes in the comments about places that can improve by following the same pattern i.e. in validation
-- Next feature can be adding stats associated with each Url such as number of clicks. Note that the design can be as simple as including a stats table which is associated with the Url the same way a user is. This table can have fields like 
-- Also can add more detailed auditing/statistics features like tracking time and date of each click, ip address it came from, how long it took to redirec, etc in a separate table. This table can maintain a url_id column for each entry to track the mentioend stats against a specific url.
+- I left some notes in the comments about places that can be improved by following the same pattern i.e. in validation

@@ -67,6 +67,7 @@ class UrlsController < ApplicationController
 
   def follow
     @url = Url.find_by_incoming(params[:incoming])
+    new_click @url.id
     redirect_to @url.outgoing, status: @url.http_status
   end
 
@@ -79,5 +80,10 @@ class UrlsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def url_params
       params.require(:url).permit(:incoming, :outgoing, :http_status)
+    end
+
+    def new_click(url_id)
+      @stat = Stat.new(url_id: url_id, event: 1)
+      @stat.save # todo: add error handling here.
     end
 end
