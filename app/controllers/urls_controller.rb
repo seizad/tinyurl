@@ -1,10 +1,11 @@
 class UrlsController < ApplicationController
   before_action :set_url, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /urls
   # GET /urls.json
   def index
-    @urls = Url.all
+    @urls = Url.where(user_id: current_user.id)
   end
 
   # GET /urls/1
@@ -15,6 +16,7 @@ class UrlsController < ApplicationController
   # GET /urls/new
   def new
     @url = Url.new
+    @url.http_status = 301 # can come from a property file with all defaults
   end
 
   # GET /urls/1/edit
@@ -25,6 +27,7 @@ class UrlsController < ApplicationController
   # POST /urls.json
   def create
     @url = Url.new(url_params)
+    @url.user = current_user
 
     respond_to do |format|
       if @url.save

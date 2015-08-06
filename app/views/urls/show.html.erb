@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Incoming:</strong>
   <%= link_to "http://ti.ni/" + @url.incoming, "/"+@url.incoming %>
@@ -13,6 +11,11 @@
 <p>
   <strong>Http status:</strong>
   <%= @url.http_status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @url.user.email %>
 </p>
 
 <%= link_to 'Edit', edit_url_path(@url) %> |
