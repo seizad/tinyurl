@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Incoming:</strong>
+  <%= link_to "http://ti.ni/" + @url.incoming, "/"+@url.incoming %>
+</p>
+
+<p>
+  <strong>Outgoing:</strong>
+  <%= @url.outgoing %>
+</p>
+
+<p>
+  <strong>Http status:</strong>
+  <%= @url.http_status %>
+</p>
+
+<%= link_to 'Edit', edit_url_path(@url) %> |
+<%= link_to 'Back', urls_path %>
