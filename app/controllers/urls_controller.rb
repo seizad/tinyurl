@@ -17,6 +17,7 @@ class UrlsController < ApplicationController
   def new
     @url = Url.new
     @url.http_status = 301 # can come from a property file with all defaults
+    @url.outgoing = "http://sample.com"
   end
 
   # GET /urls/1/edit
