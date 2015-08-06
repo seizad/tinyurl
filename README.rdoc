@@ -5,13 +5,14 @@ A Rails application for generating and managing shortened urls.
 To Run:
 - clone locally
 - bundle install
+- rake db:migrate
 - rails s
 
 Features:
 - User accounts
 - Urls managed for each user
-- Each Url has a short name which will work in the form of http://domain-name/<incoming> and will redirect to the specified url
-- Table stat allows tracking various events that take place on a url, such as click, update, delete, etc. It makes it easy to create various detailed stats related urls.
+- Each Url has a short name which will work in the form of "http:// domain-name/:short-name" and will redirect to the specified url
+- Table stat allows tracking various events that take place on a url, such as click, update, delete, etc. It makes it easy to create various detailed stats related to urls.
 
 TODO:
 - I left some notes in the comments about places that can be improved by following the same pattern i.e. in validation
